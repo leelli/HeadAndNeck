@@ -2931,7 +2931,7 @@ GameObject:
   - component: {fileID: 6710710985701804206}
   - component: {fileID: 4972459411506247602}
   m_Layer: 0
-  m_Name: PatientWalkPreFab
+  m_Name: DONOTUSEPatientWalkPreFab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
