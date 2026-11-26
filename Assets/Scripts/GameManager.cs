@@ -3,38 +3,49 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public void LoadSceneByName(string sceneName)
+    public static GameManager instance = null;
+    public int nextSceneIndex = 1; //increases scene index to go to the next scene
+    private int sceneCount;
+    
+    void Awake()
     {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void LoadSceneByIndex(int sceneIndex)
-    {
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    public void OnNextClick()
-    {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentScene < SceneManager.sceneCountInBuildSettings - 1)
+        if (instance == null)
         {
-            SceneManager.LoadScene(currentScene + 1);
+            instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+            Init();
+        }
+
+        DontDestroyOnLoad(this);
+        sceneCount = SceneManager.sceneCountInBuildSettings;
+    }
+
+    void Init()
+    {
+        SceneManager.LoadScene(1); //loading scene 1 by index
+    }
+
+    /*public void OnNextClick()
+    {
+        Debug.Log ("Scene " + (nextSceneIndex + 1) + " of " + SceneManager.sceneCountInBuildSettings);
+        nextSceneIndex += 1;
+        if (nextSceneIndex > sceneCount - 1)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     public void OnBackClick()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentScene > 0)
+        nextSceneIndex -= 1;
+        if (nextSceneIndex < 0)
         {
-            SceneManager.LoadScene(currentScene - 1);
+            nextSceneIndex = sceneCount - 1;
         }
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(0);
-    }
+        SceneManager.LoadScene(nextSceneIndex);
+    }*/
 }
