@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/GameManagerTemplateScene.unity
-    guid: 60ac2b7b65879a14f9d63083de1ab22f
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/GameManagerScenes/Starting Scene.unity
     guid: e8cc50e04a563224f9e7cec6d274b084
@@ -32,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameManagerScenes/Scene 6 Fin.unity
     guid: 6f805103ba654b748828501c0544a1ac
-  - enabled: 1
-    path: Assets/Scenes/GameManagerScenes/PatientTestScene.unity
-    guid: 410f6dafc07cb7f42a21912724762f76
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
